@@ -1,0 +1,24 @@
+{
+    "msg_01BzMcMi5P6bXyb9z89N7ZDQ": {
+        "model": "claude-instant-1.2",
+        "datetime": "2024-03-05 01:09:18.926390",
+        "duration_sec": 5.353599,
+        "system": "",
+        "prompt": "Generate a fictive score sheet of a nba game.",
+        "completion": "Here is a fake score sheet for a NBA game between the Boston Celtics and Phoenix Suns:\n\nFINAL SCORE\nBoston Celtics 120, Phoenix Suns 110\n\nQUARTER SCORES  \n1st Quarter: Celtics 30, Suns 28\n2nd Quarter: Celtics 28, Suns 26 \n3rd Quarter: Celtics 32, Suns 30\n4th Quarter: Celtics 30, Suns 26\n\nBOSTON CELTICS\nJayson Tatum: 34 points, 10 rebounds, 5 assists\nJaylen Brown: 28 points, 6 rebounds, 4 assists \nMarcus Smart: 15 points, 8 assists, 3 steals\nAl Horford: 12 points, 10 rebounds, 4 blocks\nDerrick White: 11 points, 6 assists\n\nPHOENIX SUNS \nDevin Booker: 32 points, 4 rebounds, 6 assists\nDeandre Ayton: 20 points, 12 rebounds, 3 blocks  \nChris Paul: 25 points, 12 assists, 2 steals\nMikal Bridges: 15 points, 7 rebounds\nCameron Payne: 10 points, 5 assists\n\nI generated made up stats for key players on each team, including points, rebounds, assists and other stats. The quarter scores and final score were also fabricated to depict a competitive 10-point Celtics win. Let me know if you need any other details for the fake box score!",
+        "input_token": 22,
+        "output_token": 302,
+        "price": 0.0007423999999999999
+    },
+    "msg_01GHdu9zvCfqoyMBUyDG9ewh": {
+        "model": "claude-instant-1.2",
+        "datetime": "2024-03-05 01:09:49.199026",
+        "duration_sec": 5.692119,
+        "system": "",
+        "prompt": "Generate a fictive score sheet of a soccer game.",
+        "completion": "Here is a fictive score sheet for a soccer game:\n\nGame Date: October 15th, 2022 \nHome Team: Manchester United\nAway Team: Liverpool FC\n\nScores:\n1st Half: \n20' - Manchester United Goal (Player: Cristiano Ronaldo)\n35' - Liverpool Goal (Player: Mohamed Salah)\n\nHalftime Score: Manchester United 1 - 1 Liverpool\n\n2nd Half:  \n55' - Manchester United Goal (Player: Bruno Fernandes) \n70' - Liverpool Goal (Player: Roberto Firmino)\n85' - Manchester United Goal (Player: Marcus Rashford)\n\nFull Time Score: Manchester United 3 - 2 Liverpool\n\nManchester United Scoring Summary:\nCristiano Ronaldo 1 goal\nBruno Fernandes 1 goal  \nMarcus Rashford 1 goal\n\nLiverpool Scoring Summary:\nMohamed Salah 1 goal\nRoberto Firmino 1 goal\n\nShots on Goal:\nManchester United 12\nLiverpool 10\n\nFouls: \nManchester United 12\nLiverpool 9 \n\nOffsides:\nManchester United 3\nLiverpool 5\n\nCorners:\nManchester United 6\nLiverpool 4\n\nPlayer of the Match: Bruno Fernandes (Manchester United)\n\nReferee: Jonathan Moss\nAssistant Referees: Simon Bennett, Richard West\nFourth Official: Craig Pawson\n\nHow's this? I generated a plausible score sheet for a Premier League matchup between two iconic English football clubs, including scoring details and typical match stats.",
+        "input_token": 21,
+        "output_token": 355,
+        "price": 0.0008688
+    }
+}
