@@ -81,7 +81,7 @@ class LlmClaude:
             self,
             message_id
         ):
-        filename = "last_completion.json"
+        filename = "history/last_completion.json"
         try:
             with open(filename, "r", encoding='utf-8') as json_file:
                 data = json.load(json_file)
