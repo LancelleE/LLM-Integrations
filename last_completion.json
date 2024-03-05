@@ -20,5 +20,93 @@
         "input_token": 21,
         "output_token": 355,
         "price": 0.0008688
+    },
+    "msg_01AjStzyKMfoMf3TJsADwtRs": {
+        "model": "claude-instant-1.2",
+        "datetime": "2024-03-05 10:02:14.756080",
+        "duration_sec": 3.071022,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern :\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 for priority 1 (highest), 2 for priority 2, and so on\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': '2024-03-06T08:00:00Z',  # Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n\n",
+        "prompt": "I have to buy fresh milk and bananas for my run. Also, I have to wash my sport clothes.",
+        "completion": "Here is the json with the tasks:\n\ntask_data_1 = {\n  'content': 'Buy fresh milk and bananas',\n  'due_string': 'tomorrow', \n  'due_lang': 'en',\n  'priority': 1,\n  'description': 'For my run',\n  'due_date_utc': '2024-03-06T08:00:00Z',\n  'reminder': 30,\n  'auto_reminder': True\n}\n\ntask_data_2 = {\n  'content': 'Wash sport clothes', \n  'due_string': 'tomorrow',\n  'due_lang': 'en',\n  'priority': 2,\n  'description': '',\n  'due_date_utc': '2024-03-06T08:00:00Z',\n  'reminder': 30,\n  'auto_reminder': True  \n}",
+        "input_token": 195,
+        "output_token": 193,
+        "price": 0.0006192
+    },
+    "msg_014LdPhqicwxHLYa5HWYcYcP": {
+        "model": "claude-instant-1.2",
+        "datetime": "2024-03-05 10:03:12.535146",
+        "duration_sec": 1.911168,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern. If multiple queries, create a list of python dictionaries. Return only the list :\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 for priority 1 (highest), 2 for priority 2, and so on\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': ''# Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n\n",
+        "prompt": "I have to buy fresh milk and bananas for my run. Also, I have to wash my sport clothes.",
+        "completion": "[\n    {\n        'content': 'Buy fresh milk and bananas for my run', \n        'due_string': 'tomorrow',\n        'due_lang': 'en',\n        'priority': 1,\n        'description': '',\n        'due_date_utc': '',\n        'reminder': 30,\n        'auto_reminder': True\n    },\n    {\n        'content': 'Wash my sport clothes',\n        'due_string': 'tomorrow', \n        'due_lang': 'en',\n        'priority': 2, \n        'description': '',\n        'due_date_utc': '',\n        'reminder': 30,\n        'auto_reminder': True\n    }\n]",
+        "input_token": 196,
+        "output_token": 145,
+        "price": 0.0005048
+    },
+    "msg_01XeeEx6H2ZRraUxxLjjQKND": {
+        "model": "claude-instant-1.2",
+        "datetime": "2024-03-05 10:03:54.238645",
+        "duration_sec": 2.126828,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern. If multiple queries, create a list of python dictionaries. Return only the list :\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 for priority 1 (highest), 2 for priority 2, and so on\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': ''# Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n\nToday is the 2023/03/05\n\n",
+        "prompt": "I have to buy fresh milk and bananas for my run. Also, I have to wash my sport clothes.",
+        "completion": "task_data = [\n  {\n    'content': 'Buy fresh milk and bananas for my run', \n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  \n    'description': '',\n    'due_date_utc': '2023-03-06T00:00:00Z',\n    'reminder': 30,   \n    'auto_reminder': True\n  },\n  {\n    'content': 'Wash my sport clothes',\n    'due_string': 'tomorrow', \n    'due_lang': 'en',\n    'priority': 2,\n    'description': '',\n    'due_date_utc': '2023-03-06T00:00:00Z',\n    'reminder': 30,\n    'auto_reminder': True\n  }\n]",
+        "input_token": 207,
+        "output_token": 177,
+        "price": 0.0005904
+    },
+    "msg_01GvEzQBGMEYddfBXokS8DXf": {
+        "model": "claude-instant-1.2",
+        "datetime": "2024-03-05 10:04:17.081210",
+        "duration_sec": 8.494974,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern. If multiple queries, create a list of python dictionaries. Return only the list :\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 for priority 1 (highest), 2 for priority 2, and so on\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': ''# Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n\nToday is the 2023/03/05\n\n",
+        "prompt": "I have to buy fresh milk and bananas for my run. Also, I have to wash my sport clothes. next monday I will have to see my boss for a raise, so I have to prepare myself for it",
+        "completion": "Here are the tasks formatted as json objects in a list:\n\n[\n  {\n    \"content\": \"I have to buy fresh milk and bananas for my run.\",\n    \"due_string\": \"today\", \n    \"due_lang\": \"en\",\n    \"priority\": 1,\n    \"description\": \"\",\n    \"due_date_utc\": \"2023-03-05T00:00:00Z\",\n    \"reminder\": 30, \n    \"auto_reminder\": True\n  },\n  {\n    \"content\": \"I have to wash my sport clothes.\", \n    \"due_string\": \"today\",\n    \"due_lang\": \"en\",\n    \"priority\": 2,\n    \"description\": \"\",\n    \"due_date_utc\": \"2023-03-05T00:00:00Z\",\n    \"reminder\": 30,\n    \"auto_reminder\": True  \n  },\n  {  \n    \"content\": \"next monday I will have to see my boss for a raise, so I have to prepare myself for it\",\n    \"due_string\": \"next monday\",\n    \"due_lang\": \"en\",\n    \"priority\": 1,\n    \"description\": \"\",\n    \"due_date_utc\": \"2023-03-13T00:00:00Z\", \n    \"reminder\": 30,\n    \"auto_reminder\": True\n  }\n]",
+        "input_token": 229,
+        "output_token": 289,
+        "price": 0.0008768000000000001
+    },
+    "msg_01XVYoQdUbqqExRzK5VaiKVV": {
+        "model": "claude-3-sonnet-20240229",
+        "datetime": "2024-03-05 10:04:57.464747",
+        "duration_sec": 4.981692,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern. If multiple queries, create a list of python dictionaries. Return only the list :\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 for priority 1 (highest), 2 for priority 2, and so on\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': ''# Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n\nToday is the 2023/03/05\n\n",
+        "prompt": "I have to buy fresh milk and bananas for my run. Also, I have to wash my sport clothes. next monday I will have to see my boss for a raise, so I have to prepare myself for it",
+        "completion": "Here are the formatted tasks in JSON format:\n\ntask_data = [\n    {\n        'content': 'Buy fresh milk and bananas',\n        'due_string': 'today',\n        'due_lang': 'en',\n        'priority': 1,\n        'description': 'For my run',\n        'due_date_utc': '',\n        'reminder': 60,\n        'auto_reminder': True\n    },\n    {\n        'content': 'Wash sport clothes',\n        'due_string': 'today',\n        'due_lang': 'en',\n        'priority': 2,\n        'description': '',\n        'due_date_utc': '',\n        'reminder': 120,\n        'auto_reminder': True\n    },\n    {\n        'content': 'Prepare for raise meeting with boss',\n        'due_string': 'next monday',\n        'due_lang': 'en',\n        'priority': 1,\n        'description': '',\n        'due_date_utc': '',\n        'reminder': 480,\n        'auto_reminder': True\n    }\n]",
+        "input_token": 247,
+        "output_token": 274,
+        "price": 0.004851
+    },
+    "msg_0126ew5AAVEiKQLPwMcfUAdm": {
+        "model": "claude-3-sonnet-20240229",
+        "datetime": "2024-03-05 10:05:40.981471",
+        "duration_sec": 5.307403,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern. If multiple queries, create a list of python dictionaries. Format the output :\n<code>\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 for priority 1 (highest), 2 for priority 2, and so on\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': ''# Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n</code>\n\nToday is the 2023/03/05\n\n",
+        "prompt": "I have to buy fresh milk and bananas for my run. Also, I have to wash my sport clothes. next monday I will have to see my boss for a raise, so I have to prepare myself for it",
+        "completion": "Here are the tasks formatted as Python dictionaries:\n\n<code>\ntask_data_1 = {\n    'content': 'Buy fresh milk and bananas',\n    'due_string': 'today',\n    'due_lang': 'en',\n    'priority': 2,\n    'description': 'Buy fresh milk and bananas for my run.',\n    'due_date_utc': '',\n    'reminder': 60,\n    'auto_reminder': True,\n}\n\ntask_data_2 = {\n    'content': 'Wash sport clothes',\n    'due_string': 'today',\n    'due_lang': 'en',\n    'priority': 2,\n    'description': 'Wash my sport clothes.',\n    'due_date_utc': '',\n    'reminder': 120,\n    'auto_reminder': True,\n}\n\ntask_data_3 = {\n    'content': 'Prepare for raise meeting',\n    'due_string': 'next monday',\n    'due_lang': 'en',\n    'priority': 1,\n    'description': 'Prepare myself for a meeting with my boss to ask for a raise.',\n    'due_date_utc': '',\n    'reminder': 480,\n    'auto_reminder': True,\n}\n</code>",
+        "input_token": 254,
+        "output_token": 320,
+        "price": 0.005561999999999999
+    },
+    "msg_01LvvETWsEq8kbmGmPoY5zz7": {
+        "model": "claude-3-sonnet-20240229",
+        "datetime": "2024-03-05 10:12:10.490324",
+        "duration_sec": 4.742968,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern. If multiple queries, create a list of python dictionaries. Format the output :\n<code>\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 from priority 1 to priority 4\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': ''# Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n</code>\nCalculate dates based on current date : 3\n",
+        "prompt": "\nI have to buy fresh milk and bananas for my run. \nAlso, I have to wash my sport clothes. \nNext monday I will have to see my boss for a raise, so I have to prepare myself for it\n    ",
+        "completion": "Here are the tasks formatted in a list of Python dictionaries:\n\n<code>\ntask_data = [\n    {\n        'content': 'Buy fresh milk and bananas',\n        'due_string': 'today',\n        'due_lang': 'en',\n        'priority': 2,\n        'description': 'Buy fresh milk and bananas for my run',\n        'due_date_utc': '', \n        'reminder': 60,\n        'auto_reminder': True\n    },\n    {\n        'content': 'Wash sport clothes',\n        'due_string': 'today',\n        'due_lang': 'en',\n        'priority': 3,\n        'description': 'Wash my sport clothes',\n        'due_date_utc': '',\n        'reminder': 120,\n        'auto_reminder': True\n    },\n    {\n        'content': 'Prepare for raise discussion',\n        'due_string': 'next monday',\n        'due_lang': 'en',\n        'priority': 1,\n        'description': 'Prepare myself to discuss a raise with my boss',\n        'due_date_utc': '',\n        'reminder': 480,\n        'auto_reminder': True\n    }\n]\n</code>",
+        "input_token": 251,
+        "output_token": 310,
+        "price": 0.005403
+    },
+    "msg_01Mrw8xbMrK6ynnHxrXzszTm": {
+        "model": "claude-3-sonnet-20240229",
+        "datetime": "2024-03-05 10:13:40.341888",
+        "duration_sec": 9.297944,
+        "system": "\nYou are a todoist assistant, you will transform natural language queries\ninto a formatted json following this pattern. If multiple queries, create a list of python dictionaries. Format the output :\n<code>\ntask_data = {\n    'content': 'Buy groceries',\n    'due_string': 'tomorrow',\n    'due_lang': 'en',\n    'priority': 1,  # 1 from priority 1 to priority 4\n    'description': 'Remember to buy organic fruits and vegetables.',  # Description of the task\n    'due_date_utc': ''# Due date in UTC format\n    'reminder': 30,  # Reminder in minutes before the due date\n    'auto_reminder': True,  # Enable or disable automatic reminders\n}\n</code>\nCalculate dates based on current date : 2024-03-05\n",
+        "prompt": "\nI have to buy fresh milk and bananas for my run. \nAlso, I have to wash my sport clothes. \nNext monday I will have to see my boss for a raise, so I have to prepare myself for it\n    ",
+        "completion": "Here are the tasks formatted as Python dictionaries:\n\n<code>\ntask_data = [\n    {\n        'content': 'Buy fresh milk and bananas',\n        'due_string': 'today',\n        'due_lang': 'en',\n        'priority': 2,\n        'description': 'Buy fresh milk and bananas for my run.',\n        'due_date_utc': '2024-03-05T23:59:59Z',\n        'reminder': 60,\n        'auto_reminder': True\n    },\n    {\n        'content': 'Wash sport clothes',\n        'due_string': 'today',\n        'due_lang': 'en',\n        'priority': 3,\n        'description': 'Wash my sport clothes.',\n        'due_date_utc': '2024-03-05T23:59:59Z',\n        'reminder': 120,\n        'auto_reminder': True\n    },\n    {\n        'content': 'Prepare for meeting with boss',\n        'due_string': 'next monday',\n        'due_lang': 'en',\n        'priority': 1,\n        'description': 'Prepare myself for meeting with boss to request a raise.',\n        'due_date_utc': '2024-03-11T23:59:59Z',\n        'reminder': 480,\n        'auto_reminder': True\n    }\n]\n</code>",
+        "input_token": 256,
+        "output_token": 350,
+        "price": 0.006018000000000001
     }
 }
