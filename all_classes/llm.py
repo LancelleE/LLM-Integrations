@@ -38,21 +38,21 @@ class LlmClaude:
     def __repr__(self):
         return(
             f"""
-               Model : {self.model}\n
-               Nb completions : {self.nb_session_completions}\n
+               Model: {self.model}
+               Nb completions: {self.nb_session_completions}
                Total tokens: {self.nb_session_tokens}
             """
         )
 
     def _add_stats(
-            self, 
+            self,
             tokens
         ):
         self.nb_session_completions += 1
         self.nb_session_tokens += tokens
 
     def _validate_model(
-            self, 
+            self,
             model
         ):
         valid_models = ['claude-2.0', 'claude-instant-1.2', 'claude-3-sonnet-20240229',
@@ -77,23 +77,19 @@ class LlmClaude:
         output_price = completion.usage.output_tokens * model_price['output'] / 1_000_000
         return input_price + output_price
 
-    def _store_last_completion(self, message_id):
-        # Define the filename
+    def _store_last_completion(
+            self,
+            message_id
+        ):
         filename = "last_completion.json"
-        
         try:
-            # Try to open the JSON file
             with open(filename, "r", encoding='utf-8') as json_file:
-                # Load existing data
                 data = json.load(json_file)
         except FileNotFoundError:
-            # If file doesn't exist, initialize an empty dictionary
             data = {}
 
-        # Add the last completion associated with the given ID to the dictionary
         data[message_id] = self.last_completion
 
-        # Write the updated data back to the JSON file
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(data, f)
 
