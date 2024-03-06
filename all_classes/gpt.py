@@ -1,5 +1,5 @@
 from datetime import datetime
-from llm import LlmTemplate
+from all_classes.llm import LlmTemplate
 from openai import OpenAI
 
 class LlmOpenAi(LlmTemplate):

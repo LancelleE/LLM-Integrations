@@ -1,5 +1,5 @@
 from datetime import datetime
-from llm import LlmTemplate
+from all_classes.llm import LlmTemplate
 import anthropic
 
 class LlmClaude(LlmTemplate):
@@ -44,7 +44,7 @@ class LlmClaude(LlmTemplate):
             self,
             system,
             prompt,
-            max_tokens=None
+            max_tokens=1024
         ):
         """
         Args:
