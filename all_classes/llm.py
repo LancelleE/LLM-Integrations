@@ -1,34 +1,22 @@
-"""
-Title: Llm classes
-Author: ELA
-
-This module contains utility classes for working with LLMs.
-
-Classes:
-- LlmClaude.
-"""
-
-from datetime import datetime
 import json
-import anthropic
 
-class LlmClaude:
+class LlmTemplate:
     """
-    This class presents an easy way to work with Anthropic's Claude.
+    This class presents a template for working with various LLMs.
 
     Methods:
         __init__: initialization, pick a model
         _validate_model: make sure the wanted model exists
         _get_price: calculate the price of each completion
         _store_last_completion: stores the output in a JSON file
-        get_completion: return Claude's completion based on a prompt and a system.
+        get_completion: return the completion based on a prompt and a system.
     """
     def __init__(
             self,
-            claude_api_key,
+            api_key,
             model
         ):
-        self.claude_api_key = claude_api_key
+        self.api_key = api_key
         self.model = model
         self.last_completion = None
         self.nb_session_completions = 0
@@ -55,27 +43,18 @@ class LlmClaude:
             self,
             model
         ):
-        valid_models = ['claude-2.0', 'claude-instant-1.2', 'claude-3-sonnet-20240229',
-                        'claude-3-opus-20240229', 'claude-3-haiku-20240229', 'claude-2.1']
+        valid_models = self._get_valid_models()
         if model not in valid_models:
             raise ValueError(f"Invalid model. Please choose from {valid_models}")
+
+    def _get_valid_models(self):
+        raise NotImplementedError("Subclasses must implement _get_valid_models method")
 
     def _get_price(
             self,
             completion
         ):
-        prices = {
-            'claude-2.0': {'input': 8, 'output': 24},
-            'claude-instant-1.2': {'input': .8, 'output': 2.4},
-            'claude-3-sonnet-20240229': {'input': 3, 'output': 15},
-            'claude-3-opus-20240229': {'input': 15, 'output': 75},
-            'claude-3-haiku-20240229': {'input': .25, 'output': 1.25},
-            'claude-2.1': {'input': 8, 'output': 24}
-        }
-        model_price = prices[self.model]
-        input_price = completion.usage.input_tokens * model_price['input'] / 1_000_000
-        output_price = completion.usage.output_tokens * model_price['output'] / 1_000_000
-        return input_price + output_price
+        raise NotImplementedError("Subclasses must implement _get_price method")
 
     def _store_last_completion(
             self,
@@ -98,7 +77,7 @@ class LlmClaude:
             self,
             system,
             prompt,
-            max_tokens = 1024
+            max_tokens=None
         ):
         """
         Args:
@@ -109,30 +88,4 @@ class LlmClaude:
         Returns:
             completion: 
         """
-        start_time = datetime.now()
-        completion = anthropic.Anthropic(api_key = self.claude_api_key).messages.create(
-            model=self.model,
-            max_tokens=max_tokens,
-            system=system,
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-        duration = datetime.now() - start_time
-
-        self.last_completion = {
-                    'model': self.model,
-                    'datetime': str(start_time),
-                    'duration_sec': duration.total_seconds(),
-                    'system': system,
-                    'prompt': prompt,
-                    'completion': completion.content[0].text,
-                    'input_token': completion.usage.input_tokens,
-                    'output_token': completion.usage.output_tokens,
-                    'price': self._get_price(completion)
-                }
-
-        self._store_last_completion(completion.id)
-        self._add_stats(tokens=self.last_completion['input_token'] + self.last_completion['output_token'])
-
-        return self.last_completion
+        raise NotImplementedError("Subclasses must implement get_completion method")
