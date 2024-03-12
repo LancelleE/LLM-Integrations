@@ -1,8 +1,9 @@
 from datetime import datetime
-from openai import OpenAI
+from mistralai.client import MistralClient
+from mistralai.models.chat_completion import ChatMessage
 from all_classes.llm import LlmTemplate
 
-class LlmOpenAi(LlmTemplate):
+class LlmMistral(LlmTemplate):
     """
     This class presents an easy way to work with Anthropic's Claude.
 
@@ -10,26 +11,31 @@ class LlmOpenAi(LlmTemplate):
         __init__: initialization, pick a model
         _get_valid_models: return valid models for this class
         _get_price: calculate the price of each completion
-        get_completion: return OpenAI's completion based on a prompt and a system.
+        get_completion: return Mistral's completion based on a prompt and a system.
     """
     def __init__(
             self,
-            openai_api_key,
+            mistral_api_key,
             model
         ):
-        super().__init__(api_key=openai_api_key, model=model)
+        self.client = MistralClient(api_key=mistral_api_key)
+        super().__init__(api_key=mistral_api_key, model=model)
+        
 
     def _get_valid_models(self):
-        return ['gpt-4-0125-preview','gpt-4','gpt-3.5-turbo-0125']
+        return [model.id for model in self.client.list_models().data]
+        
 
     def _get_price(
             self,
             completion
         ):
         prices = {
-            'gpt-4-0125-preview': {'input': 10, 'output': 30},
-            'gpt-4': {'input': 30, 'output': 60},
-            'gpt-3.5-turbo-0125': {'input': .5, 'output': 1.5}
+            'open-mistral-7b': {'input': .25, 'output': .25},
+            'open-mixtral-8x7b': {'input': .7, 'output': .7},
+            'mistral-small-latest': {'input': 2, 'output': 6},
+            'mistral-medium-latest': {'input': 2.7, 'output': 8.1},
+            'mistral-large-latest': {'input': 8, 'output': 24}
         }
         model_price = prices[self.model]
         input_price = completion.usage.prompt_tokens * model_price['input'] / 1_000_000
@@ -43,12 +49,14 @@ class LlmOpenAi(LlmTemplate):
             max_tokens=None
         ):
         start_time = datetime.now()
-        client = OpenAI(api_key=self.api_key)
-        response = client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": prompt}
+        # fill with completion
+        # client = MistralClient(api_key=self.api_key)
+        
+        response = self.client.chat(
+            model = self.model,
+            messages = [
+                ChatMessage(role='user', content=system),
+                ChatMessage(role='user', content=prompt)
             ]
         )
 
